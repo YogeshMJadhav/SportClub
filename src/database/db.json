@@ -1,98 +1,80 @@
+{
+  "Cricket": [
     {
-        "Cricket" : [
-            {
-                "id" : 1,
-                "Full_Name" : "Sachin Tendulkar",
-                "Born" : "18 march 1980",
-                "Playing_Role" : "Batsman",
-                "Playing_Style" : "Right Handed Batman"
-            },
-            {
-                "id" : 2,
-                "Full_Name" : "Virendra Sehwag",
-                "Born" : "1 Jan 1982",
-                "Playing_Role" : "Batsman",
-                "Playing_Style" : "Right Handed Batman"
-            },
-            {
-                "id" : 3,
-                "Full_Name" : "Saurav Gaunguly",
-                "Born" : "10 Dec 1975",
-                "Playing_Role" : "Batsman",
-                "Playing_Style" : "Left Handed Batman"
-            },
-            {
-                "id" : 4,
-                "Full_Name" : "Zaheer Khan",
-                "Born" : "23 April 1978",
-                "Playing_Role" : "Bowler",
-                "Playing_Style" : "Right Handed Bowler"
-            }
-        ],
-        "Tennis" : [
-            {
-               "id" : 5,
-               "Full_Name" : "Ramanathan Krishnan",
-               "Born" : "1 Jan 1982",
-               "Plays" : "Right-handed"
-
-            },
-            {
-                "id" : 6,
-                "Full_Name" : "Leander Paes",
-                "Born" : "19 Jan 1940",
-                "Plays" : "Right-handed"
- 
-            },
-            {
-                "id" : 7,
-                "Full_Name" : "Vijay Amritraj",
-                "Born" : "10 Dec 1937",
-                "Plays" : "Left-handed"
-            }
-        ],
-        "Swimming" : [
-            {
-               "id" : 1,
-               "Full_Name" : "Sanju Srivastav",
-               "Born" : "1 Jan 1976",
-               "Event" : "600m Freestye"
-
-            },
-            {
-                "id" : 2,
-                "Full_Name" : "Virdhawal Khade",
-                "Born" : "19 Jan 1940",
-                "Event" : "50m Freestyle"
- 
-            },
-            {
-                "id" : 3,
-                "Full_Name" : "Advait Page",
-                "Born" : "10 Dec 1937",
-                "Event" : "800m Freestyle"
-            }
-        ],
-        "Football" : [
-            {
-               "id" : 1,
-               "Full_Name" : "Guru Preet Singh",
-               "Born" : "1 Jan 1976",
-               "Playing_Role" : "GoalKeeper"
-
-            },
-            {
-                "id" : 2,
-                "Full_Name" : "Amrinder Singh",
-                "Born" : "19 Jan 1940",
-                "Playing_Role" : "GoalKeeper"
- 
-            },
-            {
-                "id" : 3,
-                "Full_Name" : "Rahul Bheke",
-                "Born" : "10 Dec 1937",
-                "Playing_Role" : "Defender"
-            }
-        ]
+      "id": 1,
+      "Full_Name": "Sachin Tendulkar",
+      "Born": "18 march 1980",
+      "Playing_Role": "Batsman",
+      "Playing_Style": "Right Handed Batman"
+    },
+    {
+      "id": 2,
+      "Full_Name": "Virendra Sehwag",
+      "Born": "1 Jan 1982",
+      "Playing_Role": "Batsman",
+      "Playing_Style": "Right Handed Batman"
+    },
+    {
+      "id": 3,
+      "Full_Name": "Saurav Gaunguly",
+      "Born": "10 Dec 1975",
+      "Playing_Role": "Batsman",
+      "Playing_Style": "Left Handed Batman"
+    },
+    {
+      "id": 4,
+      "Full_Name": "Zaheer Khan",
+      "Born": "23 April 1978",
+      "Playing_Role": "Bowler",
+      "Playing_Style": "Right Handed Bowler"
     }
+  ],
+  "Tennis": [
+    {
+      "id": 5,
+      "Full_Name": "Ramanathan Krishnan",
+      "Born": "1 Jan 1982",
+      "Plays": "Right-handed"
+    }
+  ],
+  "Swimming": [
+    {
+      "id": 1,
+      "Full_Name": "Sanju Srivastav",
+      "Born": "1 Jan 1976",
+      "Event": "600m Freestye"
+    },
+    {
+      "id": 2,
+      "Full_Name": "Virdhawal Khade",
+      "Born": "19 Jan 1940",
+      "Event": "50m Freestyle"
+    },
+    {
+      "id": 3,
+      "Full_Name": "Advait Page",
+      "Born": "10 Dec 1937",
+      "Event": "800m Freestyle"
+    }
+  ],
+  "Football": [
+    {
+      "id": 1,
+      "Full_Name": "Guru Preet Singh",
+      "Born": "1 Jan 1976",
+      "Playing_Role": "GoalKeeper"
+    },
+    {
+      "id": 2,
+      "Full_Name": "Amrinder Singh",
+      "Born": "19 Jan 1940",
+      "Playing_Role": "GoalKeeper"
+    },
+    {
+      "id": 3,
+      "Full_Name": "Rahul Bheke",
+      "Born": "10 Dec 1937",
+      "Playing_Role": "Defender"
+    }
+  ]
+}
