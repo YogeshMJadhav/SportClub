@@ -2,51 +2,51 @@
         "Cricket" : [
             {
                 "id" : 1,
-                "Full Name" : "Sachin Tendulkar",
+                "Full_Name" : "Sachin Tendulkar",
                 "Born" : "18 march 1980",
-                "Playing Role" : "Batsman",
-                "Playing Style" : "Right Handed Batman"
+                "Playing_Role" : "Batsman",
+                "Playing_Style" : "Right Handed Batman"
             },
             {
                 "id" : 2,
-                "Full Name" : "Virendra Sehwag",
+                "Full_Name" : "Virendra Sehwag",
                 "Born" : "1 Jan 1982",
-                "Playing Role" : "Batsman",
-                "Playing Style" : "Right Handed Batman"
+                "Playing_Role" : "Batsman",
+                "Playing_Style" : "Right Handed Batman"
             },
             {
                 "id" : 3,
-                "Full Name" : "Saurav Gaunguly",
+                "Full_Name" : "Saurav Gaunguly",
                 "Born" : "10 Dec 1975",
-                "Playing Role" : "Batsman",
-                "Playing Style" : "Left Handed Batman"
+                "Playing_Role" : "Batsman",
+                "Playing_Style" : "Left Handed Batman"
             },
             {
                 "id" : 4,
-                "Full Name" : "Zaheer Khan",
+                "Full_Name" : "Zaheer Khan",
                 "Born" : "23 April 1978",
-                "Playing Role" : "Bowler",
-                "Playing Style" : "Right Handed Bowler"
+                "Playing_Role" : "Bowler",
+                "Playing_Style" : "Right Handed Bowler"
             }
         ],
         "Tennis" : [
             {
                "id" : 5,
-               "Full Name" : "Ramanathan Krishnan",
+               "Full_Name" : "Ramanathan Krishnan",
                "Born" : "1 Jan 1982",
                "Plays" : "Right-handed"
 
             },
             {
                 "id" : 6,
-                "Full Name" : "Leander Paes",
+                "Full_Name" : "Leander Paes",
                 "Born" : "19 Jan 1940",
                 "Plays" : "Right-handed"
  
             },
             {
                 "id" : 7,
-                "Full Name" : "Vijay Amritraj",
+                "Full_Name" : "Vijay Amritraj",
                 "Born" : "10 Dec 1937",
                 "Plays" : "Left-handed"
             }
@@ -54,21 +54,21 @@
         "Swimming" : [
             {
                "id" : 1,
-               "Full Name" : "Sanju Srivastav",
+               "Full_Name" : "Sanju Srivastav",
                "Born" : "1 Jan 1976",
                "Event" : "600m Freestye"
 
             },
             {
                 "id" : 2,
-                "Full Name" : "Virdhawal Khade",
+                "Full_Name" : "Virdhawal Khade",
                 "Born" : "19 Jan 1940",
                 "Event" : "50m Freestyle"
  
             },
             {
                 "id" : 3,
-                "Full Name" : "Advait Page",
+                "Full_Name" : "Advait Page",
                 "Born" : "10 Dec 1937",
                 "Event" : "800m Freestyle"
             }
@@ -76,23 +76,23 @@
         "Football" : [
             {
                "id" : 1,
-               "Full Name" : "Guru Preet Singh",
+               "Full_Name" : "Guru Preet Singh",
                "Born" : "1 Jan 1976",
-               "Playing Role" : "GoalKeeper"
+               "Playing_Role" : "GoalKeeper"
 
             },
             {
                 "id" : 2,
-                "Full Name" : "Amrinder Singh",
+                "Full_Name" : "Amrinder Singh",
                 "Born" : "19 Jan 1940",
-                "Playing Role" : "GoalKeeper"
+                "Playing_Role" : "GoalKeeper"
  
             },
             {
                 "id" : 3,
-                "Full Name" : "Rahul Bheke",
+                "Full_Name" : "Rahul Bheke",
                 "Born" : "10 Dec 1937",
-                "Playing Role" : "Defender"
+                "Playing_Role" : "Defender"
             }
         ]
     }
