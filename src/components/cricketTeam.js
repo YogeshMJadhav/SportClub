@@ -7,9 +7,10 @@ function Cricket(){
             <thead>
                 <tr>
                 <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
+                <th>Full Name</th>
+                <th>Born</th>
+                <th>Playing Role</th>
+                <th>Bating Style</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,16 +19,27 @@ function Cricket(){
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>
+                <td>@mdo</td>
                 </tr>
                 <tr>
                 <td>2</td>
                 <td>Jacob</td>
                 <td>Thornton</td>
+                <td>@mdo</td>
                 <td>@fat</td>
                 </tr>
                 <tr>
                 <td>3</td>
-                <td colSpan="2">Larry the Bird</td>
+                <td >Larry the Bird</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@twitter</td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td >Larry the Bird</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
                 <td>@twitter</td>
                 </tr>
             </tbody>
