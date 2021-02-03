@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Form, Button, Modal } from 'react-bootstrap';
-import { fetchTennisData, addTennisData, deleteTennisData } from '../services/tennis';
+import { fetchTennisData, addTennisData, deleteTennisData, updateTennisData } from '../services/tennis';
 
 export default function TennisTeam() {
 
     const [ tennisData, setTennisData ] = useState([]);
-    const [show, setShow] = useState(false);
-
-    const [ deleteShow, setDelete ] = useState(false);
+    const [show, setAddShow] = useState(false);
 
     const [ fullName, setFullName ] = useState('')
     const [ bornDate, setBornDate ] = useState('')
     const [ plays, setPlays ] = useState('')
+    
+    const [ deleteShow, setDelete ] = useState(false);
+    const [ deleteTennisPlayerData, setDeleteTennisData ] = useState(null)
+    
+    const [ editTennisRecord, setEditTennisRecord ] = useState(null)
 
     /**** Add tennis records */
 
@@ -21,69 +24,110 @@ export default function TennisTeam() {
             Born: bornDate,
             Plays: plays
         };
-        addTennisData(data);
-        setShow(false);
+        addTennisData(data).then((response) => {
+            let tennisNewData = tennisData;
+            tennisNewData.push(response.data);
+            setTennisData([...tennisNewData]);
+        });
+        setAddShow(false);
     }
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
+    const handleClose = () => setAddShow(false);
+    const handleShow = () => setAddShow(true);
 
     const handleDelete = (event) => {
-        console.log('event pass form delete button', event);
-        deleteTennisData(event);
+        setDeleteTennisData(event);
         setDelete(true);
     }
-    const handleDeleteShow = () => setDelete(false);
-    const handleDeleteClose = () => setDelete(false);
 
+    const handleEditRecord = (event) => {
+        setEditTennisRecord(event)
+        // setTennisData(event);
+        setFullName(event.Full_Name);
+        setBornDate(event.Born);
+        setPlays(event.Plays);
+        setAddShow(true);
+    }
+
+    const upodateTennisRecord = () => {
+        let updatedData = {
+            Full_Name: fullName,
+            Born: bornDate,
+            Plays: plays
+        }
+        updateTennisData(editTennisRecord.id, updatedData).then((response) => {
+            let tennisNewData = tennisData;
+            tennisNewData.push(response.data);
+            setTennisData([...tennisNewData]);
+            setAddShow(false);
+        })
+    }
+    
+    const handleDeleteYes = () => {
+        deleteTennisData(deleteTennisPlayerData).then((response) => {
+            let tennisNewData = tennisData.filter(obj => obj.id !== deleteTennisPlayerData);
+            setTennisData([...tennisNewData]);
+        });
+        setDelete(false);
+    }
+    
+    const handleDeleteNo = () => setDelete(false);
+    
     useEffect(() => {
         fetchTennisData().then((res)=> {
             setTennisData(res.data)
         })
-        }, [])
+    }, [])
     
     return(
         <div>
+        {console.log('editTennisRecord', editTennisRecord)}
             <Table striped bordered hover>
                 <thead>
-
                         {/*****Add players record */}
-
                 <Button variant="primary" onClick={handleShow}>
                     Add Players
                 </Button>
+                
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                     <Modal.Title>Player Info</Modal.Title>
                     </Modal.Header>
                     <Form.Group>
-                        <Form.Control type="text" placeholder="Full Name" onChange={e => setFullName(e.target.value)} />
+                        <Form.Control type="text" placeholder="Full Name" value={fullName} onChange={e => setFullName(e.target.value)} />
                         <br />
-                        <Form.Control type="text" placeholder="Born" onChange={e => setBornDate(e.target.value)} />
+                        <Form.Control type="text" placeholder="Born" value={bornDate} onChange={e => setBornDate(e.target.value)} />
                         <br />
-                        <Form.Control type="text" placeholder="Plays" onChange={e => setPlays(e.target.value)} />
+                        <Form.Control type="text" placeholder="Plays" value={plays} onChange={e => setPlays(e.target.value)} />
                     </Form.Group>
                     <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={addTennisRecords}>
+                    {
+                    editTennisRecord ?
+                    <Button variant="primary" onClick={upodateTennisRecord}>
                         Save Changes
+                    </Button> : 
+                    <Button variant="primary" onClick={addTennisRecords}>
+                        Add
                     </Button>
+                    }
                     </Modal.Footer>
                 </Modal>
 
                 {/** Delete players record */}
 
-                    <Modal show={deleteShow} onHide={handleDeleteShow} animation={false}>
+                    <Modal show={deleteShow} onHide={handleDeleteYes} animation={false}>
                         <Modal.Header closeButton>
                         <Modal.Title>Players record</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>Sure, you want to delete this records.</Modal.Body>
                         <Modal.Footer>
-                        <Button variant="secondary" onClick={handleDeleteClose}>
+                        <Button variant="secondary" onClick={handleDeleteNo}>
                             No
                         </Button>
-                        <Button variant="primary" onClick={handleDeleteShow}>
+                        <Button variant="primary" onClick={handleDeleteYes}>
                             Yes
                         </Button>
                         </Modal.Footer>
@@ -94,6 +138,7 @@ export default function TennisTeam() {
                     <th>Full Name</th>
                     <th>Born</th>
                     <th>Plays</th>
+                    <th>Operations</th>
                     </tr>
                     
                 </thead>
@@ -105,11 +150,15 @@ export default function TennisTeam() {
                                 <td>{item.Full_Name}</td>
                                 <td>{item.Born}</td>
                                 <td>{item.Plays}</td>
+                                <td>
+                                <Button key={item.id} variant="primary" onClick={() => { handleEditRecord(item)}}>
+                                    Edit
+                                </Button>
 
-                    <Button key={item.id} variant="primary" onClick={() => { handleDelete(item.id)}}>
-                        Delete
-                    </Button>
-
+                                <Button key={item.id} variant="primary" onClick={() => { handleDelete(item.id)}}>
+                                    Delete
+                                </Button>
+                                </td>
                             </tr>
                         )
                     })}

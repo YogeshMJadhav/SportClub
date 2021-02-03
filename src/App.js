@@ -4,7 +4,7 @@ import Cricket from './components/cricketTeam';
 import FootBallTeam from './components/footbTeam';
 import TennisTeam from './components/tennisTeam';
 import SwimmingTeam from './components/swimmingTeam';
-import { Navbar, Form, FormControl, Button, Nav, Link} from 'react-bootstrap';
+import { Navbar, Form, FormControl, Button, Nav } from 'react-bootstrap';
 import homePage from './components/home';
 
 export default function App() {
