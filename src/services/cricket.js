@@ -1,17 +1,18 @@
 import axios from 'axios';
+import { commonUrl } from './commonUrl';
 
 export function fetchCricketPlayersData() {
-    return axios.get('http://localhost:4000/Cricket');
+    return axios.get(`${commonUrl}Cricket`);
 }
 
 export function addCricketPlayersData(data) {
-    return axios.post('http://localhost:4000/Cricket', data);
+    return axios.post(`${commonUrl}Cricket`, data);
 }
 
 export function updateCricketPlayersData(id, data) {
-    return axios.put(`http://localhost:4000/Cricket/${id}`, data);
+    return axios.put(`${commonUrl}Cricket/${id}`, data);
 }
 
 export function deleteCricketPlayersData(id) {
-    return axios.delete(`http://localhost:4000/Cricket${id}`);
+    return axios.delete(`${commonUrl}Cricket${id}`);
 }
