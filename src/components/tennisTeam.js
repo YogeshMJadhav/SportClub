@@ -7,6 +7,7 @@ export default function TennisTeam() {
     const [ tennisData, setTennisData ] = useState([]);
     const [show, setAddShow] = useState(false);
 
+    const [ id, setId ] = useState(0)
     const [ fullName, setFullName ] = useState('')
     const [ bornDate, setBornDate ] = useState('')
     const [ plays, setPlays ] = useState('')
@@ -33,6 +34,15 @@ export default function TennisTeam() {
     }
 
     const handleClose = () => setAddShow(false);
+
+    const handleCloseWithClearData = () => {
+        setId(0);
+        setFullName('');
+        setBornDate('');
+        setPlays('');    
+        setAddShow(false);
+    }
+
     const handleShow = () => setAddShow(true);
 
     const handleDelete = (event) => {
@@ -49,7 +59,7 @@ export default function TennisTeam() {
         setAddShow(true);
     }
 
-    const upodateTennisRecord = () => {
+    const updateTennisRecord = () => {
         let updatedData = {
             Full_Name: fullName,
             Born: bornDate,
@@ -58,6 +68,8 @@ export default function TennisTeam() {
         updateTennisData(editTennisRecord.id, updatedData).then((response) => {
             let tennisNewData = tennisData;
             tennisNewData.push(response.data);
+            
+            console.log('response from update tennisData,',tennisData, tennisNewData);
             setTennisData([...tennisNewData]);
             setAddShow(false);
         })
@@ -101,12 +113,19 @@ export default function TennisTeam() {
                         <Form.Control type="text" placeholder="Plays" value={plays} onChange={e => setPlays(e.target.value)} />
                     </Form.Group>
                     <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
+
+                        {
+                            fullName ?
+                            <Button variant="secondary" onClick={handleCloseWithClearData}>
+                                Close with clear
+                            </Button>:
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                        }
                     {
                     editTennisRecord ?
-                    <Button variant="primary" onClick={upodateTennisRecord}>
+                    <Button variant="primary" onClick={updateTennisRecord}>
                         Save Changes
                     </Button> : 
                     <Button variant="primary" onClick={addTennisRecords}>
@@ -151,6 +170,7 @@ export default function TennisTeam() {
                                 <td>{item.Born}</td>
                                 <td>{item.Plays}</td>
                                 <td>
+
                                 <Button key={item.id} variant="primary" onClick={() => { handleEditRecord(item)}}>
                                     Edit
                                 </Button>
@@ -158,6 +178,7 @@ export default function TennisTeam() {
                                 <Button key={item.id} variant="primary" onClick={() => { handleDelete(item.id)}}>
                                     Delete
                                 </Button>
+
                                 </td>
                             </tr>
                         )

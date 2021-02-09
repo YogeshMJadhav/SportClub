@@ -37,10 +37,22 @@
       "id": 5
     },
     {
-      "Full_Name": "Trushant",
-      "Born": "18 Jan 1992",
-      "Plays": "Right handed",
+      "Full_Name": "Jaywardhan",
+      "Born": "12 Jan 1994",
+      "Plays": "Left Handed",
       "id": 6
+    },
+    {
+      "Full_Name": "Trush",
+      "Born": "12 December",
+      "Plays": "Left Hand",
+      "id": 7
+    },
+    {
+      "Full_Name": "baldev",
+      "Born": "12 Aug 2020",
+      "Plays": "Left Handed",
+      "id": 8
     }
   ],
   "Swimming": [
